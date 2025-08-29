@@ -1,0 +1,27 @@
+body {
+  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  color: white;
+  text-align: center;
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  font-size: 40px;
+  color: #ff00ff;
+  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff66ff;
+}
+
+button {
+  background: #ff00ff;
+  color: white;
+  border: none;
+  padding: 15px 30px;
+  margin: 10px;
+  border-radius: 10px;
+  cursor: pointer;
+  font-size: 18px;
+}
+
+button:hover {
+  background: #cc00cc;
+}
