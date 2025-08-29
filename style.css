@@ -1,27 +1,75 @@
 body {
-  background: linear-gradient(to bottom, #0f2027, #203a43, #2c5364);
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
   color: white;
-  text-align: center;
   font-family: Arial, sans-serif;
+  
+  /* Gradient động */
+  background: linear-gradient(-45deg, #4ca9d1, #a04c8e, #5ca7c8, #6a11cb, #2575fc);
+  background-size: 400% 400%;
+  animation: gradientMove 2s ease infinite;
+}
+
+/* Animation keyframes */
+@keyframes gradientMove {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
 }
 
 h1 {
-  font-size: 40px;
-  color: #ff00ff;
-  text-shadow: 0 0 10px #ff00ff, 0 0 20px #ff66ff;
+  font-size: 45px;
+  text-transform: uppercase;
+  font-weight: bold;
+  color: transparent; 
+  -webkit-text-stroke: 2px transparent; /* Viền chữ */
+  background: linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  background-size: 2400%;
+  -webkit-background-clip: text;
+  animation: textBorderMove 5s linear infinite;
+  text-shadow: 0 0 20px rgba(255,0,255,0.7);
 }
 
+@keyframes textBorderMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+
 button {
-  background: #ff00ff;
+  background: transparent;
   color: white;
-  border: none;
   padding: 15px 30px;
   margin: 10px;
-  border-radius: 10px;
-  cursor: pointer;
   font-size: 18px;
+  border-radius: 12px;
+  cursor: pointer;
+  position: relative;
+  overflow: hidden;
+  border: 3px solid transparent;
+  background-image: linear-gradient(#bbe877, #e87676), 
+                    linear-gradient(90deg, #ff00ff, #00ffff, #ffff00, #ff00ff);
+  background-origin: border-box;
+  background-clip: padding-box, border-box;
+  animation: borderMove 6s linear infinite;
+}
+
+@keyframes borderMove {
+  0% { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
 }
 
 button:hover {
-  background: #cc00cc;
+  background-image: linear-gradient(#222, #222), 
+                    linear-gradient(90deg, #00ffff, #ff00ff, #ffff00, #00ffff);
 }
